@@ -1,4 +1,4 @@
-import NewRelicLoggingService from '@edx/frontend-logging/src/NewRelicLoggingService';
+import { NewRelicLoggingService } from '@edx/frontend-logging';
 import {
   COUPONS_REQUEST,
   COUPONS_SUCCESS,

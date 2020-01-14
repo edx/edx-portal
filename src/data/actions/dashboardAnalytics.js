@@ -1,4 +1,4 @@
-import NewRelicLoggingService from '@edx/frontend-logging/src/NewRelicLoggingService';
+import { NewRelicLoggingService } from '@edx/frontend-logging';
 import {
   FETCH_DASHBOARD_ANALYTICS_REQUEST,
   FETCH_DASHBOARD_ANALYTICS_SUCCESS,

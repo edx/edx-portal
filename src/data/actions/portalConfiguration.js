@@ -1,4 +1,4 @@
-import NewRelicLoggingService from '@edx/frontend-logging/src/NewRelicLoggingService';
+import { NewRelicLoggingService } from '@edx/frontend-logging';
 import {
   FETCH_PORTAL_CONFIGURATION_REQUEST,
   FETCH_PORTAL_CONFIGURATION_SUCCESS,

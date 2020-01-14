@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 
-import NewRelicLoggingService from '@edx/frontend-logging/src/NewRelicLoggingService';
+import { NewRelicLoggingService } from '@edx/frontend-logging';
 import ErrorBoundary from './index';
 
 global.newrelic = {
