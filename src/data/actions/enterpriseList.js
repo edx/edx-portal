@@ -1,3 +1,4 @@
+import NewRelicLoggingService from '@edx/frontend-logging/src/NewRelicLoggingService';
 import LmsApiService from '../services/LmsApiService';
 import { getPageOptionsFromUrl } from '../../utils';
 import {
@@ -5,7 +6,6 @@ import {
   PAGINATION_SUCCESS,
   PAGINATION_FAILURE,
 } from '../constants/table';
-import NewRelicService from '../services/NewRelicService';
 
 const tableId = 'enterprise-list';
 
@@ -46,7 +46,7 @@ const searchEnterpriseList = searchOptions => (
         dispatch(searchEnterpriseListSuccess(response.data));
       })
       .catch((error) => {
-        NewRelicService.logAPIErrorResponse(error);
+        NewRelicLoggingService.logAPIErrorResponse(error);
         dispatch(searchEnterpriseListFailure(error));
       });
   }

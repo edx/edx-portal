@@ -1,3 +1,4 @@
+import NewRelicLoggingService from '@edx/frontend-logging/src/NewRelicLoggingService';
 import {
   FETCH_PORTAL_CONFIGURATION_REQUEST,
   FETCH_PORTAL_CONFIGURATION_SUCCESS,
@@ -5,7 +6,6 @@ import {
   CLEAR_PORTAL_CONFIGURATION,
 } from '../constants/portalConfiguration';
 import LmsApiService from '../services/LmsApiService';
-import NewRelicService from '../services/NewRelicService';
 
 const fetchPortalConfigurationRequest = () => ({
   type: FETCH_PORTAL_CONFIGURATION_REQUEST,
@@ -31,7 +31,7 @@ const fetchPortalConfiguration = slug => (
         dispatch(fetchPortalConfigurationSuccess(response.data));
       })
       .catch((error) => {
-        NewRelicService.logAPIErrorResponse(error);
+        NewRelicLoggingService.logAPIErrorResponse(error);
         dispatch(fetchPortalConfigurationFailure(error));
       });
   }

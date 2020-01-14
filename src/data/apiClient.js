@@ -1,5 +1,5 @@
 import { getAuthenticatedAPIClient } from '@edx/frontend-auth';
-import { NewRelicLoggingService } from '@edx/frontend-logging';
+import NewRelicLoggingService from '@edx/frontend-logging/src/NewRelicLoggingService';
 
 const apiClient = getAuthenticatedAPIClient({
   appBaseUrl: process.env.BASE_URL,

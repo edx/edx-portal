@@ -28,5 +28,8 @@
   },
   "globals": {
     "newrelic": false
+  },
+  "settings": {
+    "import/core-modules": [ "redux" ]
   }
 }

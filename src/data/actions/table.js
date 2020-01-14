@@ -1,3 +1,4 @@
+import NewRelicLoggingService from '@edx/frontend-logging/src/NewRelicLoggingService';
 import { getPageOptionsFromUrl } from '../../utils';
 
 import {
@@ -9,7 +10,6 @@ import {
   SORT_FAILURE,
   CLEAR_TABLE,
 } from '../constants/table';
-import NewRelicService from '../services/NewRelicService';
 
 const paginationRequest = (tableId, options) => ({
   type: PAGINATION_REQUEST,
@@ -69,7 +69,7 @@ const paginateTable = (tableId, fetchMethod, pageNumber) => (
     return fetchMethod(options).then((response) => {
       dispatch(paginationSuccess(tableId, response.data, options.ordering));
     }).catch((error) => {
-      NewRelicService.logAPIErrorResponse(error);
+      NewRelicLoggingService.logAPIErrorResponse(error);
       dispatch(paginationFailure(tableId, error));
     });
   }
@@ -130,7 +130,7 @@ const sortTable = (tableId, fetchMethod, ordering) => (
     return fetchMethod(options).then((response) => {
       dispatch(sortSuccess(tableId, ordering, response.data));
     }).catch((error) => {
-      NewRelicService.logAPIErrorResponse(error);
+      NewRelicLoggingService.logAPIErrorResponse(error);
       dispatch(sortFailure(tableId, error));
     });
   }

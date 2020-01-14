@@ -1,3 +1,4 @@
+import NewRelicLoggingService from '@edx/frontend-logging/src/NewRelicLoggingService';
 import {
   COUPONS_REQUEST,
   COUPONS_SUCCESS,
@@ -7,7 +8,6 @@ import {
   COUPON_SUCCESS,
   COUPON_FAILURE,
 } from '../constants/coupons';
-import NewRelicService from '../services/NewRelicService';
 
 // TODO handle pagination using updateUrl
 // import { updateUrl } from '../../utils';
@@ -60,7 +60,7 @@ const fetchCouponOrders = options => (
         dispatch(fetchCouponOrdersSuccess(response.data));
       })
       .catch((error) => {
-        NewRelicService.logAPIErrorResponse(error);
+        NewRelicLoggingService.logAPIErrorResponse(error);
         // This endpoint returns a 404 if no data exists,
         // so we convert it to an empty response here.
         if (error.response.status === 404) {
@@ -81,7 +81,7 @@ const fetchCouponOrder = couponId => (
       })
       .catch((error) => {
         dispatch(fetchCouponOrderFailure(error));
-        NewRelicService.logAPIErrorResponse(error);
+        NewRelicLoggingService.logAPIErrorResponse(error);
       });
   }
 );
