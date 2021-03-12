@@ -42,7 +42,7 @@
     "history": "4.10.1",
     "jest-environment-jsdom": "26.6.1",
     "jwt-decode": "2.2.0",
-    "lodash": "4.17.20",
+    "lodash": "4.17.21",
     "moment": "2.27.0",
     "prop-types": "15.7.2",
     "query-string": "5.1.1",
