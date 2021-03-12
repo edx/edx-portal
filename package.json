@@ -71,7 +71,7 @@
   "peerDependencies": {
     "dotenv": "8.2.0",
     "dotenv-webpack": "3.0.0",
-    "webpack": "4.44.2",
+    "webpack": "4.46.0",
     "webpack-merge": "5.4.0",
     "mini-css-extract-plugin": "0.11.2",
     "html-webpack-new-relic-plugin": "2.0.0",
